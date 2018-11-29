@@ -1,11 +1,11 @@
 package california.parser
 
 import java.util.concurrent.atomic.{AtomicBoolean, AtomicLong, AtomicReference}
-
-import LineSplitter._
 import org.reactivestreams.{Subscriber, Subscription}
 
 class LineSplitter() extends AbstractProcessor[Char, String] {
+
+  import LineSplitter._
 
   private val buffer = new StringBuilder(75, "")
   private val state = new AtomicReference[SplitState](Normal)
